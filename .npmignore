@@ -1,0 +1,19 @@
+# Env files & lockfiles
+.env
+pnpm-lock.yaml
+
+# Dev artifacts
+src/
+test/
+coverage/
+.vscode/
+.github/
+
+# Build scripts & configs
+tsconfig.json
+vitest.config.ts
+.eslintrc.js
+
+# Misc
+.gitignore
+npm-debug.log*
