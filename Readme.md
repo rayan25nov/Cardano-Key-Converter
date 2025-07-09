@@ -1,7 +1,8 @@
-# Cardano Key Converter
+# Cardano Key Converter (CJS + ESM)
 
-A TypeScript package for converting Cardano onchain private keys to offchain private keys compatible with Lucid Cardano.
+A universal TypeScript package that works seamlessly with both CommonJS (CJS) and ES Modules (ESM) for converting Cardano onchain private keys to offchain private keys compatible with Lucid Cardano.
 
+A TypeScript package 
 ## Installation
 
 ```bash
