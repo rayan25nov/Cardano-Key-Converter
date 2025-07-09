@@ -1,6 +1,6 @@
 {
   "name": "cardano-key-converter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The official package to convert onchain private key to lucid compatible offchain private key",
   "repository": "https://github.com/rayan25nov/Cardano-Key-Converter",
   "author": {
@@ -23,16 +23,15 @@
   "main": "dist/cjs/cardanoKeyConverter.js",
   "module": "dist/esm/cardanoKeyConverter.js",
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "typecheck": "tsc --noEmit",
-    "compile:esm": "tsc --outDir dist/esm",
+    "clean": "rimraf dist",
+    "compile:esm": "tsc --outDir dist/esm --module esnext",
     "compile:cjs": "tsc --outDir dist/cjs --module commonjs",
     "compile:types": "tsc --outDir dist/types --emitDeclarationOnly --declarationMap --declaration",
-    "compile": "yarn compile:cjs && yarn compile:esm && yarn compile:types",
-    "build": "yarn clean && yarn compile",
-    "watch": "yarn compile:cjs && yarn compile:types && yarn compile:esm --watch",
+    "compile": "pnpm compile:cjs && pnpm compile:esm && pnpm compile:types",
+    "build": "pnpm clean && pnpm compile",
+    "watch": "pnpm compile:cjs && pnpm compile:types && pnpm compile:esm --watch",
     "docs": "docgen generate --typedoc-options ./typedoc.json",
-    "docs:ci": "yarn docs --unsafe",
+    "docs:ci": "pnpm docs --unsafe",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
@@ -55,6 +54,8 @@
     "@types/node": "^24.0.10",
     "@vitest/ui": "^3.2.4",
     "jsdom": "^26.1.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   }
 }
