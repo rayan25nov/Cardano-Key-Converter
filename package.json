@@ -1,8 +1,8 @@
 {
   "name": "cardano-key-converter",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "The official package to convert onchain private key to lucid compatible offchain private key",
-  "repository": "https://github.com/rayan25nov/cardano",
+  "repository": "https://github.com/rayan25nov/Cardano-Key-Converter",
   "author": {
     "name": "Rayan Ahmad",
     "url": "https://github.com/rayan25nov"
@@ -19,9 +19,9 @@
     "src",
     "package.json"
   ],
-  "types": "dist/types/exports/cardanoKeyConverter.d.ts",
-  "main": "dist/cjs/exports/cardanoKeyConverter.js",
-  "module": "dist/esm/exports/cardanoKeyConverter.js",
+  "types": "dist/types/cardanoKeyConverter.d.ts",
+  "main": "dist/cjs/cardanoKeyConverter.js",
+  "module": "dist/esm/cardanoKeyConverter.js",
   "scripts": {
     "clean": "rm -rf ./dist",
     "typecheck": "tsc --noEmit",
@@ -39,14 +39,15 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/esm/exports/cardanoKeyConverter.js",
-      "require": "./dist/cjs/exports/cardanoKeyConverter.js",
-      "types": "./dist/types/exports/cardanoKeyConverter.d.ts"
+      "import": "./dist/esm/cardanoKeyConverter.js",
+      "require": "./dist/cjs/cardanoKeyConverter.js",
+      "types": "./dist/types/cardanoKeyConverter.d.ts"
     }
   },
   "dependencies": {
     "@aiquant/lucid-cardano": "^0.10.11",
     "bech32": "^2.0.0",
+    "core-js": "^3.30.2",
     "dotenv": "^17.0.1",
     "fs": "0.0.1-security"
   },
