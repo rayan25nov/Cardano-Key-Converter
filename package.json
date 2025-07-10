@@ -19,9 +19,9 @@
     "src",
     "package.json"
   ],
-  "types": "dist/types/cardanoKeyConverter.d.ts",
-  "main": "dist/cjs/cardanoKeyConverter.js",
-  "module": "dist/esm/cardanoKeyConverter.js",
+  "types": "dist/types/CardanoKeyConverter.d.ts",
+  "main": "dist/cjs/CardanoKeyConverter.js",
+  "module": "dist/esm/CardanoKeyConverter.js",
   "scripts": {
     "clean": "rimraf dist",
     "compile:esm": "tsc --outDir dist/esm --module esnext",
@@ -38,9 +38,9 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/esm/cardanoKeyConverter.js",
-      "require": "./dist/cjs/cardanoKeyConverter.js",
-      "types": "./dist/types/cardanoKeyConverter.d.ts"
+      "import": "./dist/esm/CardanoKeyConverter.js",
+      "require": "./dist/cjs/CardanoKeyConverter.js",
+      "types": "./dist/types/CardanoKeyConverter.d.ts"
     }
   },
   "dependencies": {
