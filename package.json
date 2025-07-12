@@ -1,6 +1,6 @@
 {
   "name": "cardano-key-converter",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "The official package to convert onchain private key to lucid compatible offchain private key",
   "repository": "https://github.com/rayan25nov/Cardano-Key-Converter",
   "author": {
@@ -44,7 +44,7 @@
     }
   },
   "dependencies": {
-    "@aiquant/lucid-cardano": "^0.10.11",
+    "@lucid-evolution/lucid": "^0.4.29",
     "bech32": "^2.0.0",
     "core-js": "^3.30.2",
     "dotenv": "^17.0.1",

@@ -1,4 +1,4 @@
-import { Lucid, PrivateKey, Network, UTxO } from "@aiquant/lucid-cardano";
+import { Lucid, PrivateKey, Network, UTxO } from "@lucid-evolution/lucid";
 import { Bech32Encoder, CardanoConfig } from "./cardanoKeyConverter";
 
 export interface Bech32Encoder {

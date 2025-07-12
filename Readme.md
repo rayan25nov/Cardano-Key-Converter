@@ -2,7 +2,8 @@
 
 A universal TypeScript package that works seamlessly with both CommonJS (CJS) and ES Modules (ESM) for converting Cardano onchain private keys to offchain private keys compatible with Lucid Cardano.
 
-A TypeScript package 
+A TypeScript package
+
 ## Installation
 
 ```bash
@@ -28,7 +29,7 @@ yarn add cardano-key-converter
 ### Basic Usage
 
 ```typescript
-import { Network } from "@aiquant/lucid-cardano";
+import { Network } from "@lucid-evolution/lucid";
 import CardanoKeyConverter from "cardano-key-converter";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";

@@ -1,12 +1,12 @@
 import { describe, it, expect, beforeEach, afterEach, vi, Mock } from "vitest";
 import { existsSync, readFileSync } from "fs";
-import { Lucid, Blockfrost, PrivateKey, Network } from "@aiquant/lucid-cardano";
+import { Lucid, Blockfrost, PrivateKey, Network } from "@lucid-evolution/lucid";
 import { CardanoKeyConverter, CardanoUtils } from "../src/CardanoKeyConverter";
 import { CardanoConfig } from "../src/cardanoKeyConverter";
 
 // Mock external dependencies
 vi.mock("fs");
-vi.mock("@aiquant/lucid-cardano");
+vi.mock("@lucid-evolution/lucid");
 vi.mock("dotenv");
 
 // Mock bech32 module

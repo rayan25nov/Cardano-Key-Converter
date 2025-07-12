@@ -1,4 +1,4 @@
-import { Network } from "@aiquant/lucid-cardano";
+import { Network } from "@lucid-evolution/lucid";
 import CardanoKeyConverter from "../src/CardanoKeyConverter";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
@@ -24,7 +24,7 @@ async function run() {
 
     // const walletAddress = await converter.getWalletAddress(keyPath);
     const lucid = await converter.createLucidWithPrivateKey(keyPath);
-    const walletAddress = await lucid.wallet.address();
+    const walletAddress = await lucid.wallet().address();
 
     const cborHex = converter.readPrivateKeyFile(keyPath);
 

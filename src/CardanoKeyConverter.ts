@@ -1,6 +1,12 @@
 // src/CardanoKeyConverter.ts
 import { existsSync, readFileSync } from "fs";
-import { Lucid, Blockfrost, PrivateKey, Network } from "@aiquant/lucid-cardano";
+import {
+  Lucid,
+  Blockfrost,
+  PrivateKey,
+  Network,
+  LucidEvolution,
+} from "@lucid-evolution/lucid";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -208,18 +214,20 @@ export class CardanoKeyConverter {
    * @param keyPath - Path to the onchain private key file
    * @returns Initialized Lucid instance with wallet selected
    */
-  public async createLucidWithPrivateKey(keyPath: string): Promise<Lucid> {
+  public async createLucidWithPrivateKey(
+    keyPath: string
+  ): Promise<LucidEvolution> {
     try {
       // Initialize Lucid
 
-      const lucid = await Lucid.new(
+      const lucid = await Lucid(
         new Blockfrost(this.blockfrostApiUrl, this.blockfrostApiKey),
         this.network
       );
 
       // Convert and select wallet
       const privateKey = await this.onchainToOffchainPrivateKey(keyPath);
-      lucid.selectWalletFromPrivateKey(privateKey);
+      lucid.selectWallet.fromPrivateKey(privateKey);
 
       return lucid;
     } catch (error) {
@@ -243,7 +251,7 @@ export class CardanoKeyConverter {
   public async getWalletAddress(keyPath: string): Promise<string> {
     try {
       const lucid = await this.createLucidWithPrivateKey(keyPath);
-      return await lucid.wallet.address();
+      return await lucid.wallet().address();
     } catch (error) {
       if (error instanceof Error) {
         throw new Error(`Error getting wallet address: ${error.message}`);
@@ -261,7 +269,7 @@ export class CardanoKeyConverter {
   public async getWalletUtxos(keyPath: string) {
     try {
       const lucid = await this.createLucidWithPrivateKey(keyPath);
-      const address = await lucid.wallet.address();
+      const address = await lucid.wallet().address();
       return await lucid.utxosAt(address);
     } catch (error) {
       if (error instanceof Error) {
